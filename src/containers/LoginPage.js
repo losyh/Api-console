@@ -2,10 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import styled from 'styled-components';
-
 import {authenticate} from 'src/store/actions/auth';
 
-// console.log(false);
 
 const Wrapper = styled.div`
   height: 100%;
@@ -92,7 +90,7 @@ border: none;
 cursor: pointer;
 `
 
-const LinkToGit = styled.a`
+export const LinkToGit = styled.a`
 color: var(--Text-gray, #999);
 text-align: center;
 font-size: 16px;
