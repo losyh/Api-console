@@ -150,7 +150,7 @@ const ServerItems = ({getServerItems}) => {
     useEffect(() => {
         setServerItems(getServerItems())
     }, [getServerItems])
-
+    
     return (
         <>
         {serverItems.map((item, i) => {
