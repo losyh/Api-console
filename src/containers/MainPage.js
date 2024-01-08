@@ -26,7 +26,7 @@ margin-right: 15px;
 cursor: pointer;
 `
 
-const Cont = styled.div`
+const HeaderDiv = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-between;
@@ -74,7 +74,7 @@ display: inline-flex;
 `
 
 const HistoryTrack = styled(Header)`
-
+justify-content: space-between;
 `
 
 const Rectangle = styled.div`
@@ -90,20 +90,55 @@ align-items: center;
 gap: 5px;
 border-radius: 5px;
 box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.10);
+margin-left: 10px;
 `
 
 const StatusImg = styled.img`
 margin: 0;
 `
+
+const DotsItem = styled(StatusImg)`
+cursor: pointer;
+`
+
 const StatusName = styled(SubTitle)`
 margin: 0 5px;
+`
+
+const RectangleHeight = styled(Rectangle)`
+width: 1px;
+height: 50px;
+`
+
+const HistoryTrackItem = styled(Header)`
+justify-content: flex-start;
+`
+
+const HistoryTrackShadow = styled.div`
+width: 15px;
+height: 49px;
+flex-shrink: 0;
+background: linear-gradient(270deg, #F6F6F6 0.06%, rgba(246, 246, 246, 0.00) 99.93%);
+`
+
+const Cross = styled.img`
+margin: 0 13px;
 `
 
 
 function MainPage() {
     let server = [
         {status: false, name: 'track.get'},
-        {status: true, name: 'issue.send'}
+        {status: true, name: 'issue.send'},
+        {status: false, name: 'track.get'},
+        {status: true, name: 'issue.send'},
+        {status: false, name: 'track.get'},
+        {status: true, name: 'issue.send'},
+        {status: false, name: 'track.get'},
+        {status: true, name: 'issue.send'},
+        {status: false, name: 'track.get'},
+        {status: true, name: 'issue.send'},
+        {status: false, name: 'track.get'}
         ]; 
 
     const getServerItems = useCallback(() => {
@@ -115,11 +150,11 @@ function MainPage() {
     return (
         <>
             <Header>
-                <Cont>
+                <HeaderDiv>
                     <LogoStyled src="/icons/logo.svg" alt="logo"/>
                     <Title>API-консолька</Title>
-                </Cont>
-                <Cont>
+                </HeaderDiv>
+                <HeaderDiv>
                     <MailDiv>
                         <SubTitle>some@email.com</SubTitle>
                         <Colon>:</Colon>
@@ -128,11 +163,19 @@ function MainPage() {
                     <ExitTitle>Выйти</ExitTitle>
                     <LogOutStyled src='/icons/log-out.svg'/>
                     <FullScreenStyled src='/icons/full-screen.svg'/>
-                </Cont>
+                </HeaderDiv>
             </Header>
             <Rectangle/>
             <HistoryTrack>
-                <ServerItems getServerItems={getServerItems}/>
+                <HistoryTrackItem>
+                    <ServerItems getServerItems={getServerItems}/>
+                </HistoryTrackItem>
+                <HistoryTrackItem>
+                    <HistoryTrackShadow/>
+                    <RectangleHeight/>
+                    <Cross src="/icons/cross.svg"/>
+                </HistoryTrackItem>
+                
             </HistoryTrack>
             <Rectangle/>
         </>
@@ -155,11 +198,11 @@ const ServerItems = ({getServerItems}) => {
         <>
         {serverItems.map((item, i) => {
             console.log('Yes daddy');
-            <DivItem key={i}>
+            return (<DivItem key={i}>
                 {item.status ? <StatusImg src='/icons/status-good.svg'/> : <StatusImg src='/icons/status-false.svg'/>}
                 <StatusName>{item.name}</StatusName>
-                <StatusImg src='/icons/dots.svg'/>
-            </DivItem>
+                <DotsItem src='/icons/dots.svg'/>
+            </DivItem>)
         })}
         </>
     )
