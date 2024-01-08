@@ -154,7 +154,7 @@ const ServerItems = ({getServerItems}) => {
     return (
         <>
         {serverItems.map((item, i) => {
-            console.log('Yes');
+            console.log('Yes daddy');
             <DivItem key={i}>
                 {item.status ? <StatusImg src='/icons/status-good.svg'/> : <StatusImg src='/icons/status-false.svg'/>}
                 <StatusName>{item.name}</StatusName>
