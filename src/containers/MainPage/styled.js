@@ -10,8 +10,8 @@ justify-content: space-between;
 flex-direction: row;
 `
 export const LogoStyled = styled.img`
-  margin-left: 15px;
-  display: inline-flex;
+margin-left: 15px;
+display: inline-flex;
 `;
 
 export const LogOutStyled = styled.img`
@@ -100,7 +100,7 @@ export const StatusImg = styled.img`
 margin: 0;
 `
 
-export const DotsItem = styled(StatusImg)`
+export const PointsItem = styled(StatusImg)`
 cursor: pointer;
 `
 
@@ -110,4 +110,5 @@ margin: 0 5px;
 
 export const Cross = styled.img`
 margin: 0 14px;
+cursor: pointer;
 `

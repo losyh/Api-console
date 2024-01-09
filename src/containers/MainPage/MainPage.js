@@ -72,7 +72,7 @@ const ServerItems = ({getServerItems}) => {
             return (<Styled.ServerItem key={i}>
                 {item.status ? <Styled.StatusImg src='/icons/status-good.svg'/> : <Styled.StatusImg src='/icons/status-false.svg'/>}
                 <Styled.StatusName>{item.name}</Styled.StatusName>
-                <Styled.DotsItem src='/icons/dots.svg'/>
+                <Styled.PointsItem src='/icons/dots.svg'/>
             </Styled.ServerItem>)
         })}
         </>
