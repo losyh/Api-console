@@ -10,7 +10,7 @@ justify-content: center;
 flex-direction: column;
 `;
 
-export const Form = styled.section`
+export const Form = styled.form`
 width: 520px;
 height: 425px;
 left: calc(50% - 520px / 2);
@@ -29,7 +29,8 @@ export const Input = styled.input`
 width: 460px;
 height: 40px;
 border-radius: 5px;
-border: 1px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
+border: ${props => props.$inputBorderError ? '1px solid var(--Red, #CF2C00)' : "1px solid var(--borders-elements, rgba(0, 0, 0, 0.20))"};
+box-shadow: ${props => props.$inputBoxShadowError ? '0px 0px 5px 0px rgba(207, 44, 0, 0.50)' : null};
 background: #FFF;
 margin: 0 0 20px;
 color: var(--Text-Black, #0D0D0D);
@@ -40,10 +41,6 @@ line-height: 30px;
 padding-left: 5px;
 `;
 
-export const InputPass = styled(Input)`
-letter-spacing: 1.8px;
-font-weight: 900;
-`;
 
 export const Title = styled.h1`
 color: var(--Text-Black, #0D0D0D);
@@ -54,8 +51,8 @@ line-height: 30px;
 margin: 0 0 20px;
 `
 
-export const SubTitle = styled.p`
-color: var(--Text-Black, #0D0D0D);
+export const Label = styled.label`
+color: ${props => props.$labelColorError ?  'var(--Red, #CF2C00)' : 'var(--Text-Black, #0D0D0D)'};
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
@@ -64,14 +61,14 @@ margin: 0 0 5px;
 display: inline-flex;
 `
 
-export const Option = styled(SubTitle)`
+export const Option = styled.span`
 color: var(--Text-gray, #999);
 text-align: right;
 font-size: 12px;
 display: inline-flex;
 margin-left: 313px
 `
-export const LogBtn = styled.button`
+export const Submit = styled.button`
 width: 110px;
 height: 40px;
 border-radius: 5px;

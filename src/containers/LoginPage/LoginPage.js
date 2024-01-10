@@ -37,27 +37,34 @@ function LoginPage({history}) {
     doLogin();
   }
 
-  const errorInp = error ? {outline: '1px solid red', boxShadow: '1px 1px 2px 0 red'} : null;
-  const errorP = error ? {color: 'var(--Red, #CF2C00)'} : null;
   return (
     <Styled.Wrapper>
       <Styled.LogoStyled src="/icons/logo.svg" alt="logo" />
       <Styled.Form onSubmit={onSubmit} action="/">
         <Styled.Title>API-консолька</Styled.Title>
-        <Styled.SubTitle style={errorP}>Логин</Styled.SubTitle>
-        <Styled.Input value={login} onChange={(e) => setLogin(e.target.value)} style={errorInp}/>
-        <Styled.SubTitle style={errorP}>Сублогин</Styled.SubTitle>
-        <Styled.Option>Опционально</Styled.Option>
-        <Styled.Input value={sublogin} onChange={(e) => setSubLogin(e.target.value)} style={errorInp}/>
-        <Styled.SubTitle style={errorP}>Пароль</Styled.SubTitle>
-        <Styled.InputPass value={password} onChange={(e) => setPassword(e.target.value)} type='password' style={errorInp}/>
-        <Styled.LogBtn type="submit" onClick={onSubmit}>
+        <Input label='Логин' error={error}/>
+        <Input label='Сублогин' error={error} required={true}/>
+        <Input label='Пароль' error={error} type={'password'}/>
+        <Styled.Submit type="submit" onClick={onSubmit}>
           Войти
-        </Styled.LogBtn>
+        </Styled.Submit>
       </Styled.Form>
-      <Styled.LinkToGit href="https://github.com/losyh/main-project" target="_blank">@link-to-your-github</Styled.LinkToGit>
+      <Styled.LinkToGit href="https://github.com/losyh/Api-console.git" target="_blank">@link-to-my-github</Styled.LinkToGit>
     </Styled.Wrapper>
   );
+}
+
+
+const Input = (props) =>{
+  const {label, type, error, required} = props;
+
+  return (
+    <>
+      <Styled.Label for={label} $labelColorError={error}>{label}</Styled.Label>
+      {required && <Styled.Option>Опционально</Styled.Option>}
+      <Styled.Input id={label} type={type} $inputBorderError={error} $inputBoxShadowError={error}/>
+    </>
+  )
 }
 
 export default withRouter(LoginPage);
