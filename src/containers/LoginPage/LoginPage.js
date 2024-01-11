@@ -60,9 +60,9 @@ const Input = (props) =>{
 
   return (
     <>
-      <Styled.Label for={label} $labelColorError={error}>{label}</Styled.Label>
+      <Styled.Label for={label} $error={error}>{label}</Styled.Label>
       {required && <Styled.Option>Опционально</Styled.Option>}
-      <Styled.Input id={label} type={type} $inputBorderError={error} $inputBoxShadowError={error}/>
+      <Styled.Input id={label} type={type} $error={error}/>
     </>
   )
 }

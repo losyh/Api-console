@@ -16,8 +16,8 @@ function App() {
         <PersistGate loading={null} persistor={persistor}>
           <Switch>
             <Route path="/">
-              <LoginPage />
-              {/* <MainPage/> */}
+              {/* <LoginPage /> */}
+              <MainPage/>
             </Route>
           </Switch>
         </PersistGate>

@@ -29,8 +29,8 @@ export const Input = styled.input`
 width: 460px;
 height: 40px;
 border-radius: 5px;
-border: ${props => props.$inputBorderError ? '1px solid var(--Red, #CF2C00)' : "1px solid var(--borders-elements, rgba(0, 0, 0, 0.20))"};
-box-shadow: ${props => props.$inputBoxShadowError ? '0px 0px 5px 0px rgba(207, 44, 0, 0.50)' : null};
+border: ${props => props.$error ? '1px solid var(--Red, #CF2C00)' : "1px solid var(--borders-elements, rgba(0, 0, 0, 0.20))"};
+box-shadow: ${props => props.$error ? '0px 0px 5px 0px rgba(207, 44, 0, 0.50)' : null};
 background: #FFF;
 margin: 0 0 20px;
 color: var(--Text-Black, #0D0D0D);
@@ -52,7 +52,7 @@ margin: 0 0 20px;
 `
 
 export const Label = styled.label`
-color: ${props => props.$labelColorError ?  'var(--Red, #CF2C00)' : 'var(--Text-Black, #0D0D0D)'};
+color: ${props => props.$error ?  'var(--Red, #CF2C00)' : 'var(--Text-Black, #0D0D0D)'};
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
