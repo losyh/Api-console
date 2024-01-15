@@ -1,15 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import * as Styled from './styled.js'
 import HistoryTrackItems from './HistoryTrackItems/HistoryTrackItems.js';
+import HorizontalScroll from 'react-scroll-horizontal'
 
 
 const HistoryTrack = () => {
 
     return(
         <Styled.HistoryTrack>
-            <Styled.HistoryTrackLeftSide>
-                <HistoryTrackItems/>
-            </Styled.HistoryTrackLeftSide>
+            <HorizontalScroll>
+                <Styled.HistoryTrackLeftSide>
+                    <HistoryTrackItems/>
+                </Styled.HistoryTrackLeftSide>
+            </HorizontalScroll>
             <Styled.HistoryTrackRightSide>
                 <Styled.Cross src="/icons/cross.svg"/>
             </Styled.HistoryTrackRightSide>

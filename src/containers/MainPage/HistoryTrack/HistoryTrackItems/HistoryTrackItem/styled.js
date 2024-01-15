@@ -40,8 +40,8 @@ border-radius: 3px;
 background: var(--Paperwhite, #FFF);
 box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
 position: absolute;
-top: 100px;
-left: 15px;
+top: 93px;
+left: 5px;
 `
 
 export const DropDownItem = styled.div`

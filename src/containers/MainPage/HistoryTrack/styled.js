@@ -9,13 +9,12 @@ flex-direction: row;
 justify-content: space-between;
 border-top: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
 border-bottom: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
-position: relative;
 `
 
 export const HistoryTrackLeftSide = styled(HistoryTrack)`
 justify-content: flex-start;
 padding-left: 5px;
-border-top: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
+border-top: 0px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
 border-bottom: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
 overflow: auto;
 ::-webkit-scrollbar {
@@ -27,7 +26,8 @@ overflow: auto;
 export const HistoryTrackRightSide = styled(HistoryTrackLeftSide)`
 justify-content: flex-start;
 overflow: visible;
-border-left: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20)) ;
+border-left: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
+border-top: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
 position: sticky;
 right: 0;
 box-shadow: -17px 0px 25px #F6F6F6;
