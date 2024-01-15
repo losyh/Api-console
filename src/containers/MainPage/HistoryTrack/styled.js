@@ -9,6 +9,7 @@ flex-direction: row;
 justify-content: space-between;
 border-top: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
 border-bottom: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
+position: relative;
 `
 
 export const HistoryTrackLeftSide = styled(HistoryTrack)`
@@ -29,36 +30,7 @@ overflow: visible;
 border-left: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20)) ;
 position: sticky;
 right: 0;
-
-`
-
-export const ServerItem = styled.div`
-display: flex;
-padding: 5px 10px;
-align-items: center;
-gap: 5px;
-border-radius: 5px;
-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.10);
-margin-left: 10px;
-`
-
-export const StatusImg = styled.img`
-margin: 0;
-`
-
-export const PointsItem = styled(StatusImg)`
-cursor: pointer;
-`
-
-export const StatusName = styled.span`
-color: var(--Text-Black, #0D0D0D);
-font-family: SF Pro Text;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px;
-margin: 0 5px;
-display: inline-flex;
+box-shadow: -17px 0px 25px #F6F6F6;
 `
 
 export const Cross = styled.img`
