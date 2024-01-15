@@ -17,10 +17,14 @@ const HistoryTrackItems = () => {
         setRequestItems(generateMocks(20))
     }, [])
 
+    const onDelete = (key) => {
+        setRequestItems(requestItems.filter((item, index) => index !== key))
+    }
+
 
     return (
-        requestItems.map((item, i) => {
-            return(<HistoryTrackItem name={item.name} key={i} status={item.status}/>)
+        requestItems.map((item, index) => {
+            return(<HistoryTrackItem name={item.name} key={index} status={item.status} onDelete={() => onDelete(index)}/>)
         }))
 }
 

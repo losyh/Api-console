@@ -33,7 +33,7 @@ function LoginPage({history}) {
   };
 
   function onSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
     doLogin();
   }
 
