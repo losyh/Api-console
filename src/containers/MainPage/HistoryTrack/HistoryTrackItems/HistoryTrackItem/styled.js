@@ -45,9 +45,29 @@ left: 5px;
 `
 
 export const DropDownItem = styled.div`
+width: 100%;
 display: flex;
 padding: 10px 15px;
 align-items: center;
 gap: 10px;
 cursor: pointer;
+&:hover {
+    background: ${props => props.$background ?  `${props.$background}` : 'var(--Paperwhite, #FFF)'};
+    color: ${props => props.$background ?  'var(--Paperwhite, #FFF)' : 'var(--Text-Black, #0D0D0D)'};
+`
+
+export const Gap = styled.div`
+display: flex;
+padding: 5px 0px;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+`
+
+export const Feature = styled.div`
+width: 133px;
+height: 1px;
+border-radius: 5px;
+border: 1px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
+background: #FFF;
 `
