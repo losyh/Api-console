@@ -33,7 +33,7 @@ const HistoryTrackItem = (prop) => {
                 <Styled.StatusName>{prop.name}</Styled.StatusName>
                 <Styled.PointsItem src='/icons/dots.svg'/>
                 <Portal>
-                    {isOpen && <DropDown left={myRef} onDelete={prop.onDelete} key={prop.key} name={prop.name}/>}
+                    {isOpen && <DropDown left={myRef} onDeleteItem={prop.onDeleteItem} key={prop.key} name={prop.name}/>}
                 </Portal>    
             </Styled.HistoryItem>
     )
@@ -56,7 +56,7 @@ const DropDown = (props) => {
         <Styled.DropDownItem>Выполнить</Styled.DropDownItem>
         <Styled.DropDownItem $background={'#0055FB'} onClick={handleClickCopy}>Скопировать</Styled.DropDownItem>
         <Styled.Gap><Styled.Feature/></Styled.Gap>
-        <Styled.DropDownItem $background={'var(--Red, #CF2C00)'}  onClick={() => props.onDelete()}>Удалить</Styled.DropDownItem>
+        <Styled.DropDownItem $background={'var(--Red, #CF2C00)'}  onClick={() => props.onDeleteItem()}>Удалить</Styled.DropDownItem>
     </Styled.DropDown>
     )
 }
