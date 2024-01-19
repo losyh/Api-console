@@ -1,7 +1,6 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 import * as Styled from './styled.js'
 import HistoryTrackItems from './HistoryTrackItems/HistoryTrackItems.js';
-import HorizontalScroll from 'react-scroll-horizontal'
 
 
 const HistoryTrack = () => {
@@ -15,13 +14,21 @@ const HistoryTrack = () => {
     const onDeleteAllItems = () => {
         setRequestItems([])
     }
+
+    useEffect(() => {
+        const scrollContainer = document.getElementById("scroll");
+
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+        });
+    }, [])
+
     return(
         <Styled.HistoryTrack>
-            <HorizontalScroll>
-                <Styled.HistoryTrackLeftSide>
+                <Styled.HistoryTrackLeftSide id='scroll'>
                     <HistoryTrackItems requestItems={requestItems} onChangeRequestItems={onChangeRequestItems}/>
                 </Styled.HistoryTrackLeftSide>
-            </HorizontalScroll>
             <Styled.HistoryTrackRightSide>
                 <Styled.Cross src="/icons/cross.svg" onClick={onDeleteAllItems}/>
             </Styled.HistoryTrackRightSide>

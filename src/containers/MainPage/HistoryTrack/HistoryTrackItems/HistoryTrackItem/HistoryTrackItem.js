@@ -6,6 +6,7 @@ import * as Styled from './styled.js'
 
 const HistoryTrackItem = (prop) => {
     const [isOpen, setOpen] = useState(false)
+    const [copy, setCopy] = useState(false)
     const myRef = useRef(null)
 
     const handleClickDropDown = () => {
@@ -26,14 +27,18 @@ const HistoryTrackItem = (prop) => {
         }
     }, []);
 
-    
+    const OnCopy = (item) => {
+        setCopy(item)
+    }
+
     return (
         <Styled.HistoryItem key={prop.key} onClick={() => handleClickDropDown()} ref={myRef}>
+                {copy ? <Styled.Copy>Скопировано</Styled.Copy> : null}
                 {prop.status ? <Styled.StatusImg src='/icons/status-good.svg'/> : <Styled.StatusImg src='/icons/status-false.svg'/>}
                 <Styled.StatusName>{prop.name}</Styled.StatusName>
                 <Styled.PointsItem src='/icons/dots.svg'/>
                 <Portal>
-                    {isOpen && <DropDown left={myRef} onDeleteItem={prop.onDeleteItem} key={prop.key} name={prop.name}/>}
+                    {isOpen && <DropDown left={myRef} onDeleteItem={prop.onDeleteItem} key={prop.key} name={prop.name} OnCopy={OnCopy}/>}
                 </Portal>    
             </Styled.HistoryItem>
     )
@@ -48,8 +53,13 @@ const Portal = (props) => {
 
 
 const DropDown = (props) => {   
+
     const handleClickCopy = () => {
         navigator.clipboard.writeText(props.name)
+        props.OnCopy(true)
+        setTimeout(() => {
+            props.OnCopy(false)
+        }, 500)
     }
     return(
         <Styled.DropDown style={{left: Number(`${props.left.current.offsetLeft}`)}}>

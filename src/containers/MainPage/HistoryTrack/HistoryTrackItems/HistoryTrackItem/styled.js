@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const HistoryItem = styled.div`
 display: flex;
@@ -70,4 +70,33 @@ height: 1px;
 border-radius: 5px;
 border: 1px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
 background: #FFF;
+`
+
+const fadeOut = keyframes`
+from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+`
+
+export const Copy = styled.div`
+position: absolute;
+display: inline-flex;
+border-radius: 5px;
+background: var(--Underpaper, #F6F6F6);
+padding: 0px 5px;
+align-items: center;
+color: var(--Text-Black, #0D0D0D);
+font-family: "SF Pro Text";
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;
+animation: ${fadeOut} 1s ease-in-out;
+animation-fill-mode: none; 
 `

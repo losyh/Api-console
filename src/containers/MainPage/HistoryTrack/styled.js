@@ -13,7 +13,7 @@ border-bottom: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
 
 export const HistoryTrackLeftSide = styled(HistoryTrack)`
 justify-content: flex-start;
-border-top: 0px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
+border-top: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
 border-bottom: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.20));
 overflow: auto;
 ::-webkit-scrollbar {
