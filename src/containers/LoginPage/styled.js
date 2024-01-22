@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 
-
 export const Wrapper = styled.div`
 height: 100%;
 display: flex;
@@ -29,8 +28,8 @@ export const Input = styled.input`
 width: 460px;
 height: 40px;
 border-radius: 5px;
-border: ${props => props.$error ? '1px solid var(--Red, #CF2C00)' : "1px solid var(--borders-elements, rgba(0, 0, 0, 0.20))"};
-box-shadow: ${props => props.$error ? '0px 0px 5px 0px rgba(207, 44, 0, 0.50)' : null};
+border: ${(props) => props.$error ? '1px solid var(--Red, #CF2C00)' : '1px solid var(--borders-elements, rgba(0, 0, 0, 0.20))'};
+box-shadow: ${(props) => props.$error ? '0px 0px 5px 0px rgba(207, 44, 0, 0.50)' : null};
 background: #FFF;
 margin: 0 0 20px;
 color: var(--Text-Black, #0D0D0D);
@@ -49,17 +48,17 @@ font-style: normal;
 font-weight: 400;
 line-height: 30px;
 margin: 0 0 20px;
-`
+`;
 
 export const Label = styled.label`
-color: ${props => props.$error ?  'var(--Red, #CF2C00)' : 'var(--Text-Black, #0D0D0D)'};
+color: ${(props) => props.$error ? 'var(--Red, #CF2C00)' : 'var(--Text-Black, #0D0D0D)'};
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 20px;
 margin: 0 0 5px;
 display: inline-flex;
-`
+`;
 
 export const Option = styled.span`
 color: var(--Text-gray, #999);
@@ -67,7 +66,7 @@ text-align: right;
 font-size: 12px;
 display: inline-flex;
 margin-left: 313px
-`
+`;
 export const Submit = styled.button`
 width: 110px;
 height: 40px;
@@ -82,7 +81,7 @@ line-height: 30px;
 outline: none;
 border: none;
 cursor: pointer;
-`
+`;
 
 export const LinkToGit = styled.a`
 color: var(--Text-gray, #999);
@@ -94,4 +93,4 @@ line-height: 20px;
 margin: 20px 0 0; 
 cursor: pointer;
 text-decoration: none;
-`
+`;
