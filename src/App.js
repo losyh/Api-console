@@ -17,7 +17,7 @@ function App() {
           <Switch>
             <Route path="/">
               {/* <LoginPage /> */}
-              <MainPage/>
+              <MainPage />
             </Route>
           </Switch>
         </PersistGate>

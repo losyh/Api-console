@@ -3,20 +3,13 @@ import {withRouter} from 'react-router-dom';
 import Header from './Header/Header.js';
 import HistoryTrack from './HistoryTrack/HistoryTrack.js';
 
-
- 
-
 function MainPage() {
-    return (
-        <>
-            <Header/>
-            <HistoryTrack/>
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <HistoryTrack />
+    </>
+  );
 }
-
-
-
-
 
 export default withRouter(MainPage);
