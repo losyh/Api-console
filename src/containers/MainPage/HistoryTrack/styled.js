@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const HistoryTrack = styled.section`
   height: 50px;
@@ -33,6 +33,6 @@ export const HistoryTrackRightSide = styled(HistoryTrackLeftSide)`
 `;
 
 export const Cross = styled.img`
-  margin: 0 14px;
+  padding: 14px;
   cursor: pointer;
 `;

@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom';
 import * as Styled from './styled.js';
 
 const HistoryTrackItem = (props) => {
-  const {name, status, onDeleteItem} = props;
+  const {name, status, onDeleteItem, index} = props;
   const [isOpen, setOpen] = useState(false);
   const [copy, setCopy] = useState(false);
   const historyItemRef = useRef(null);
+  const [left, setLeft] = useState(null);
 
   const handleClickDropDown = () => {
     setOpen(!isOpen);
+    setLeft(historyItemRef.current.offsetLeft);
   };
+  if (index === 3) {
+    console.log(left);
+  }
 
   useEffect(() => {
     const handleDocumentClick = (event) => {
@@ -18,7 +23,12 @@ const HistoryTrackItem = (props) => {
         setOpen(false);
       }
     };
-
+    // if (index === 12) {
+    //   console.log(historyItemRef.current.offsetLeft);
+    //   setTimeout(() => {
+    //     console.log(historyItemRef.current.offsetLeft);
+    //   }, 3000);
+    // }
     document.addEventListener('click', handleDocumentClick);
 
     return () => {
@@ -68,7 +78,7 @@ const Portal = (props) => {
 
 const DropDown = (props) => {
   const {left, onDeleteItem, handleClickCopy} = props;
-
+  console.log(left);
   return (
     <Styled.DropDown style={{left: Number(`${left.current.offsetLeft}`)}}>
       <Styled.DropDownItem>Выполнить</Styled.DropDownItem>

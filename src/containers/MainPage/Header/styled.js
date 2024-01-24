@@ -11,13 +11,9 @@ export const Logo = styled.img`
   display: inline-flex;
 `;
 
-export const LogOut = styled.img`
-  margin-right: 30px;
-  cursor: pointer;
-`;
-
 export const FullScreenStyled = styled.img`
-  margin-right: 15px;
+  padding: 0 10px;
+  margin-right: 5px;
   cursor: pointer;
 `;
 
@@ -45,7 +41,7 @@ export const MailSection = styled.div`
   border-radius: 5px;
   border: 1px solid var(--borders-elements, rgba(0, 0, 0, 0.2));
   display: inline-flex;
-  margin-right: 30px;
+  margin-right: 25px;
 `;
 
 export const SubTitle = styled.span`
@@ -57,9 +53,18 @@ line-height: 20px;
 margin 0;
 display: inline-flex;
 `;
+
+export const ExitContainer = styled(HeaderSection)`
+  cursor: pointer;
+  padding: 0 5px;
+`;
+
 export const ExitTitle = styled(SubTitle)`
   margin-right: 8px;
-  cursor: pointer;
+`;
+
+export const LogOut = styled.img`
+  margin-right: 15px;
 `;
 
 export const Colon = styled(SubTitle)`

@@ -14,6 +14,7 @@ const HistoryTrackItems = (props) => {
         key={index}
         status={item.status}
         onDeleteItem={() => deleteItem(index)}
+        index={index}
       />
     );
   });

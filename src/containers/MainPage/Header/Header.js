@@ -14,8 +14,10 @@ const Header = () => {
           <Styled.Colon>:</Styled.Colon>
           <Styled.SubTitle>sublogin</Styled.SubTitle>
         </Styled.MailSection>
-        <Styled.ExitTitle>Выйти</Styled.ExitTitle>
-        <Styled.LogOut src="/icons/log-out.svg" />
+        <Styled.ExitContainer>
+          <Styled.ExitTitle>Выйти</Styled.ExitTitle>
+          <Styled.LogOut src="/icons/log-out.svg" />
+        </Styled.ExitContainer>
         <Styled.FullScreenStyled src="/icons/full-screen.svg" />
       </Styled.HeaderSection>
     </Styled.Header>
