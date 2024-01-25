@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "add": "^2.0.6",
     "fbjs": "^1.0.0",
+    "json-beautify": "^1.1.1",
     "jsoneditor": "^9.0.0",
     "jsoneditor-react": "^3.0.0",
     "prop-types": "^15.7.2",
