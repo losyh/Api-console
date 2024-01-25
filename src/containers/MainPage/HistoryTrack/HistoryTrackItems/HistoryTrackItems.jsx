@@ -1,5 +1,5 @@
 import React from 'react';
-import HistoryTrackItem from './HistoryTrackItem/HistoryTrackItem.js';
+import HistoryTrackItem from './HistoryTrackItem/HistoryTrackItem.jsx';
 
 const HistoryTrackItems = (props) => {
   const {requestItems, setRequestItems} = props;
@@ -14,7 +14,6 @@ const HistoryTrackItems = (props) => {
         key={index}
         status={item.status}
         onDeleteItem={() => deleteItem(index)}
-        index={index}
       />
     );
   });

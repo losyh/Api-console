@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import * as Styled from './styled.js';
-import HistoryTrackItems from './HistoryTrackItems/HistoryTrackItems.js';
+import HistoryTrackItems from './HistoryTrackItems/HistoryTrackItems.jsx';
 
 const generateMocks = (count) => {
   let res = [];
