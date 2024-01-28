@@ -1,6 +1,6 @@
 import styled, {keyframes} from 'styled-components';
 
-export const Input = styled.textarea`
+export const TextArea = styled.textarea`
 weight: 500px;
 height: 400px
 `

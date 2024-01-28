@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@svgr/webpack": "^5.4.0",
+    "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "add": "^2.0.6",
-    "fbjs": "^1.0.0",
-    "json-beautify": "^1.1.1",
+    "fbjs": "^3.0.5",
     "jsoneditor": "^9.0.0",
     "jsoneditor-react": "^3.0.0",
     "prop-types": "^15.7.2",
@@ -31,7 +30,7 @@
     "yarn": "^1.22.4"
   },
   "scripts": {
-    "start": "set PORT=3000 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -50,15 +49,6 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "eslint": "^8.0.1",
-    "eslint-config-google": "^0.14.0",
-    "eslint-config-standard-with-typescript": "^43.0.1",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.33.2",
-    "prettier": "2.0.5",
-    "typescript": "*"
+    "prettier": "2.0.5"
   }
 }
