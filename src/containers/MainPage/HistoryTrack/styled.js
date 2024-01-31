@@ -29,7 +29,17 @@ export const HistoryTrackRightSide = styled(HistoryTrackLeftSide)`
   border-top: 2px solid var(--borders-elements, rgba(0, 0, 0, 0.2));
   position: sticky;
   right: 0;
-  box-shadow: -17px 0px 25px #f6f6f6;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: -17px;
+    width: 15px;
+    height: 40px;
+    background: linear-gradient(270deg, #F6F6F6 0.06%, rgba(246, 246, 246, 0.00) 99.93%);
+  }
+  
+  
 `;
 
 export const Cross = styled.img`

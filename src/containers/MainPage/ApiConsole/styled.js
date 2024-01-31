@@ -18,16 +18,19 @@ width: 100%;
 
 export const TextArea = styled.textarea`
   width: 100%;
-  height: 700px;
+  height: 76vh;
   resize: none;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid var(--borders-elements, rgba(0, 0, 0, 0.2));
+  border: ${(props) => (props.$error ? '1px solid var(--Red, #CF2C00)' : '1px solid var(--borders-elements, rgba(0, 0, 0, 0.20))')};
+  box-shadow: ${(props) => (props.$error ? '0px 0px 5px 0px rgba(207, 44, 0, 0.50)' : null)};
   background: #fff;
   font-family: 'Fira Code';
   font-size: 14px;
   line-height: 18px;
-
+  :focus {
+    outline: none;
+  }
 `;
 
 export const Btn = styled.button`
@@ -36,7 +39,6 @@ export const Btn = styled.button`
   border-radius: 5px;
   background: linear-gradient(180deg, #45a6ff 0%, #0055fb 100%), #c4c4c4;
   color: #FFF;
-  font-family: "SF Pro Text";
   font-size: 16px;
   outline: none;
   border: none;
@@ -44,17 +46,13 @@ export const Btn = styled.button`
 `;
 
 export const Img = styled.img`
-  margin-left: 3px;
+  padding-left: 3px;
 `;
 
 export const Label = styled.label`
-color: var(--Text-gray, #999);
-
+color: ${(props) => (props.$error ? 'var(--Red, #CF2C00)' : 'var(--Text-gray, #999)')};
 font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px;
-display: block;
+margin-bottom: 3px;
 `
 
 export const Futter = styled(TextAreaContainer)`
@@ -67,11 +65,6 @@ padding: 15px 15px 0 15px;
 
 export const LinkGit = styled.a`
 color: var(--Text-gray, #999);
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px;
-cursor: pointer;
 text-decoration: none;
 `
 
@@ -82,14 +75,8 @@ cursor: pointer;
 `
 
 export const FormatSpan = styled.span`
-color: var(--Text-Black, #0D0D0D);
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px;
 `
 
-export const ConTadsa = styled.div`
+export const ResizeConainer = styled.div`
 display: flex;
-
 `

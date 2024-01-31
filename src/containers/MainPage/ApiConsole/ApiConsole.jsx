@@ -4,14 +4,19 @@ import { Resizable } from 're-resizable';
 
 const ApiConsole = () => {
   const inputRef = useRef(null);
-  const dotsRef = useRef(null);
+  const [errorFormating, setErrorFormating] = useState(false)
   const [width, setWidth] = useState('934px')
 
   const handleClickFormatingTextArea = () => {
     const className = inputRef.current;
-    className.value = JSON.stringify(JSON.parse(className.value), null, 2);
+    try {
+      className.value = JSON.stringify(JSON.parse(className.value), null, 2);
+      setErrorFormating(false)
+    } catch (error) {
+      setErrorFormating(true)
+      console.log('JError');
+    }
   };
-
 
   return (
     <>
@@ -19,19 +24,17 @@ const ApiConsole = () => {
           <Resizable
             enable={{ top:false, right:true, bottom:false, left:false, topRight:false, bottomRight:false, bottomLeft:false, topLeft:false }}
             minWidth={'100px'}
-            maxHeight={'530px'}
             size={{ width: width}}
             onResizeStop={(e, direction, ref, d) => {
               setWidth({
                 width: width + d.width
               });
             }}>
-              <Styled.ConTadsa>
-              <TextArea label={'Запрос:'} refff={inputRef} id={1}/>
-            <Styled.Img src="/icons/dots.svg" ref={dotsRef} draggable="true" />
-              </Styled.ConTadsa>
+              <Styled.ResizeConainer>
+              <TextArea label={'Запрос:'} reff={inputRef} id={1} errorFormating={errorFormating}/>
+            <Styled.Img src="/icons/dots.svg" draggable="true" />
+              </Styled.ResizeConainer>
           </Resizable>
-          
         <TextArea label={'Ответ:'} id={2}/>
       </Styled.ApiContainer>
       <Styled.Futter>
@@ -48,11 +51,11 @@ const ApiConsole = () => {
 
 
 const TextArea = (props) => {
-  const {label, refff} = props;
+  const {label, reff, errorFormating} = props;
   return (
     <Styled.TextAreaContainer>
-        <Styled.Label id={label}>{label}</Styled.Label>
-        <Styled.TextArea role="textbox" ref={refff} id={label}/>
+        <Styled.Label id={label} $error={errorFormating}>{label}</Styled.Label>
+        <Styled.TextArea role="textbox" ref={reff} id={label} $error={errorFormating}/>
     </Styled.TextAreaContainer>
   )
 }
