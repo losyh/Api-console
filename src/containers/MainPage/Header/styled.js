@@ -34,7 +34,6 @@ export const Title = styled.h1`
 `;
 export const MailSection = styled.div`
   height: 30px;
-  display: flex;
   padding: 5px 15px;
   align-items: flex-start;
   gap: 5px;

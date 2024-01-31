@@ -31,7 +31,6 @@ const HistoryTrackItem = (props) => {
       setCopy(false);
     }, 500);
   };
-
   return (
     <Styled.HistoryItem
       onClick={() => handleClickDropDown()}
