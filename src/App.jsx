@@ -15,8 +15,10 @@ function App() {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Switch>
-            <Route path="/">
-              {/* <LoginPage /> */}
+            <Route exact path="/">
+              <LoginPage />
+            </Route>
+            <Route exact path="/console">
               <MainPage />
             </Route>
           </Switch>

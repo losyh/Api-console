@@ -14,7 +14,6 @@ const ApiConsole = () => {
       setErrorFormating(false)
     } catch (error) {
       setErrorFormating(true)
-      console.log('JError');
     }
   };
 

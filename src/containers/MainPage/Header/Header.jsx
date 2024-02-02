@@ -12,7 +12,7 @@ const Header = () => {
         document.exitFullscreen();
       }
     }
-    setFullScreen(!fullScreen)
+    setFullScreen(fullScreen => !fullScreen)
   }
 
   return (
